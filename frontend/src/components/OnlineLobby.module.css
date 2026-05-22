@@ -1,0 +1,195 @@
+.lobby {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #1a1a2e;
+  color: #ecf0f1;
+  gap: 20px;
+  padding: 32px 16px;
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #f1c40f;
+  margin: 0;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 360px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.sectionTitle {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ecf0f1;
+  margin: 0;
+}
+
+.hint {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+  margin: 0;
+  text-align: center;
+}
+
+.roomCode {
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 0.25em;
+  color: #f1c40f;
+  background: rgba(241, 196, 15, 0.1);
+  border: 2px solid rgba(241, 196, 15, 0.4);
+  border-radius: 10px;
+  padding: 12px 28px;
+}
+
+.waiting {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top-color: #f1c40f;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.createBtn {
+  background: #27ae60;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+}
+
+.createBtn:hover:not(:disabled) {
+  background: #2ecc71;
+}
+
+.createBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.joinRow {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.codeInput {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: #ecf0f1;
+  font-size: 1.2rem;
+  letter-spacing: 0.2em;
+  text-align: center;
+}
+
+.codeInput::placeholder {
+  color: #4a5568;
+  letter-spacing: 0.1em;
+}
+
+.joinBtn {
+  background: #2980b9;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.joinBtn:hover:not(:disabled) {
+  background: #3498db;
+}
+
+.joinBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.divider {
+  color: #4a5568;
+  font-size: 0.85rem;
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  text-align: center;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 42%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.divider::before { left: 0; }
+.divider::after { right: 0; }
+
+.error {
+  color: #e74c3c;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.backBtn {
+  background: transparent;
+  color: #7f8c8d;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.backBtn:hover {
+  color: #ecf0f1;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 640px) {
+  .roomCode {
+    font-size: 2rem;
+    padding: 10px 20px;
+  }
+  .section {
+    padding: 16px;
+  }
+}

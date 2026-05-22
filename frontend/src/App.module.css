@@ -1,0 +1,213 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #1a1a2e;
+  color: #ecf0f1;
+  gap: 24px;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #f1c40f;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+
+.subtitle {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+  margin: 0;
+  letter-spacing: 0.2em;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 20px;
+  min-width: 260px;
+}
+
+.btn {
+  background: #2980b9;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  position: relative;
+}
+
+.btn:hover {
+  background: #3498db;
+  transform: translateY(-2px);
+}
+
+.btnSecondary {
+  background: #555;
+}
+
+.btnSecondary:hover {
+  background: #666;
+}
+
+.btnRules {
+  background: rgba(241, 196, 15, 0.15);
+  border: 2px solid rgba(241, 196, 15, 0.4);
+  color: #f1c40f;
+}
+
+.btnRules:hover {
+  background: rgba(241, 196, 15, 0.28);
+  border-color: #f1c40f;
+}
+
+.badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #e74c3c;
+  color: #fff;
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  border-radius: 999px;
+}
+
+.gameWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #1a1a2e;
+}
+
+.gameNav {
+  display: flex;
+  gap: 10px;
+  padding: 8px 16px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.navBtn {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ecf0f1;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.2s;
+}
+
+.navBtn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ローカル対戦: 手番交代ハンドオフ */
+.handoffOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: rgba(10, 10, 25, 0.96);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.handoffCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 48px 56px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+}
+
+.handoffPlayerNum {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #f1c40f;
+  line-height: 1;
+}
+
+.handoffMessage {
+  font-size: 1.5rem;
+  color: #ecf0f1;
+  margin-top: -4px;
+}
+
+.handoffHint {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin: 4px 0 0;
+  line-height: 1.7;
+}
+
+.handoffBtn {
+  margin-top: 8px;
+  padding: 13px 44px;
+  background: #27ae60;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.handoffBtn:hover {
+  background: #2ecc71;
+  transform: translateY(-2px);
+}
+
+/* ===== モバイル対応 ===== */
+@media (max-width: 640px) {
+  .title {
+    font-size: 2.2rem;
+  }
+  .subtitle {
+    font-size: 0.95rem;
+  }
+  .buttons {
+    min-width: 0;
+    width: 80vw;
+    max-width: 320px;
+  }
+  .btn {
+    padding: 13px 20px;
+    font-size: 1rem;
+  }
+
+  .handoffCard {
+    padding: 36px 28px;
+    width: 80vw;
+  }
+  .handoffPlayerNum {
+    font-size: 2.2rem;
+  }
+  .handoffMessage {
+    font-size: 1.2rem;
+  }
+  .handoffHint {
+    font-size: 0.82rem;
+  }
+  .handoffBtn {
+    padding: 11px 36px;
+    font-size: 1rem;
+  }
+
+  .navBtn {
+    padding: 5px 10px;
+    font-size: 0.78rem;
+  }
+}

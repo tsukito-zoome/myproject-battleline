@@ -1,0 +1,211 @@
+.flagSlot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  transition: border-color 0.2s;
+  min-width: 60px;
+}
+
+.flagSlot.targetable {
+  border-color: #f1c40f;
+  background: rgba(241, 196, 15, 0.1);
+  cursor: pointer;
+}
+
+.flagSlot.targetable:hover {
+  background: rgba(241, 196, 15, 0.2);
+}
+
+.claimedPlayer0 {
+  background: rgba(52, 152, 219, 0.15);
+  border-color: rgba(52, 152, 219, 0.4);
+}
+
+.claimedPlayer1 {
+  background: rgba(231, 76, 60, 0.15);
+  border-color: rgba(231, 76, 60, 0.4);
+}
+
+.oppCards,
+.myCards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.cardRow {
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.emptySlot {
+  width: 38px;
+  height: 54px;
+  border: 1px dashed #555;
+  border-radius: 4px;
+}
+
+.flagCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #2c3e50;
+  border: 2px solid #7f8c8d;
+  position: relative;
+  cursor: default;
+}
+
+.flagCenter.claimable {
+  border-color: #2ecc71;
+  background: #1a5c3a;
+  cursor: pointer;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.5); }
+  50% { box-shadow: 0 0 0 6px rgba(46, 204, 113, 0); }
+}
+
+.flagNum {
+  color: #ecf0f1;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.flagCaptured {
+  font-size: 1.2rem;
+}
+
+.envIcon {
+  font-size: 0.75rem;
+  position: absolute;
+  top: -6px;
+  right: -6px;
+}
+
+.claimHint {
+  font-size: 0.5rem;
+  color: #2ecc71;
+  position: absolute;
+  bottom: -14px;
+  white-space: nowrap;
+}
+
+.formLabel {
+  font-size: 0.55rem;
+  color: #bdc3c7;
+  text-align: center;
+  max-width: 80px;
+}
+
+.weatherRow {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  justify-content: center;
+}
+
+.weatherTag {
+  font-size: 0.6rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  padding: 1px 4px;
+  color: #ecf0f1;
+  white-space: nowrap;
+}
+
+.redeployTarget {
+  border-color: #e67e22;
+  background: rgba(230, 126, 34, 0.08);
+}
+
+.flagCenter.redeployable {
+  border-color: #e67e22;
+  background: #5d3a0a;
+  cursor: pointer;
+  animation: pulseOrange 1s infinite;
+}
+
+@keyframes pulseOrange {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0.5); }
+  50% { box-shadow: 0 0 0 6px rgba(230, 126, 34, 0); }
+}
+
+.redeploySourceCard {
+  padding: 0;
+  border: 2px solid #e67e22;
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+  transition: transform 0.1s, border-color 0.1s;
+}
+
+.redeploySourceCard:hover {
+  transform: scale(1.1);
+  border-color: #f39c12;
+}
+
+.deserterTarget {
+  border-color: #8e44ad;
+  background: rgba(142, 68, 173, 0.08);
+}
+
+.flagCenter.deserterRedeployable {
+  border-color: #8e44ad;
+  background: #3d1a5c;
+  cursor: pointer;
+  animation: pulseViolet 1s infinite;
+}
+
+@keyframes pulseViolet {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(142, 68, 173, 0.5); }
+  50% { box-shadow: 0 0 0 6px rgba(142, 68, 173, 0); }
+}
+
+/* ===== モバイル対応 ===== */
+@media (max-width: 640px) {
+  .flagSlot {
+    min-width: 50px;
+    padding: 2px;
+    gap: 2px;
+  }
+  .flagCenter {
+    width: 36px;
+    height: 36px;
+  }
+  .flagNum {
+    font-size: 0.85rem;
+  }
+  .flagCaptured {
+    font-size: 1rem;
+  }
+  .formLabel {
+    font-size: 0.45rem;
+    max-width: 60px;
+  }
+  .emptySlot {
+    width: 30px;
+    height: 42px;
+  }
+  .weatherTag {
+    font-size: 0.5rem;
+    padding: 1px 2px;
+  }
+  .claimHint {
+    font-size: 0.42rem;
+  }
+}
